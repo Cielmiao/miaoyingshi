@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <m-header></m-header>
+    <router-view></router-view>
+    <m-footer></m-footer>
+    <layout></layout>
   </div>
 </template>
 
 <script>
+import MHeader from "components/m-header/m-header"
+import Layout from "components/layout/layout"
+import MFooter from "components/m-footer/m-footer"
 export default {
-  name: 'App'
+  components:{
+    MHeader,
+    Layout,
+    MFooter
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app{
+    background-color: rgba(0,0,0,0.3);
+  }
 </style>
