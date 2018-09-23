@@ -2,30 +2,34 @@
 	<div class="header">
 		<div class="container">
 			<div class="row">
+			<div>
 				<a href="" class="image">
 					<img src="" alt="">
 				</a>
-				<nav class="nav">
-					<router-link tag="div" class="link" to="/Home">
-						<span class="tab-link">首页</span>
-					</router-link>
-					<router-link tag="div" class="link" to="/Movie">
-						<span class="tab-link">电影</span>
-					</router-link>
-					<router-link tag="div" class="link" to="/Tv">
-						<span class="tab-link">电视剧</span>
-					</router-link>
-					<router-link tag="div" class="link" to="/Animation">
-						<span class="tab-link">动漫</span>
-					</router-link>
-					<router-link tag="div" class="link" to="/Variety">
-						<span class="tab-link">综艺</span>
-					</router-link>
-					<router-link tag="div" class="link" to="/Message">
-						<span class="tab-link">求片留言板</span>
-					</router-link>
+				<nav class="nav-class">
+					<ul>
+						<router-link tag="li" class="link" to="/Home">
+							<span class="tab-link">首页</span>
+						</router-link>
+						<router-link tag="li" class="link" to="/Movie">
+							<span class="tab-link">电影</span>
+						</router-link>
+						<router-link tag="li" class="link" to="/Tv">
+							<span class="tab-link">电视剧</span>
+						</router-link>
+						<router-link tag="li" class="link" to="/Animation">
+							<span class="tab-link">动漫</span>
+						</router-link>
+						<router-link tag="li" class="link" to="/Variety">
+							<span class="tab-link">综艺</span>
+						</router-link>
+						<router-link tag="li" class="link" to="/Message">
+							<span class="tab-link">求片留言板</span>
+						</router-link>
+					</ul>
 				</nav>
-					<form class="search" action="">
+				</div>
+					<form class="search" action="" >
 						<input class="form-control" type="text" placeholder="请输入影片关键词">
 						<a href="">
 							<i class="iconfont icon-search"></i>
@@ -45,22 +49,25 @@
 		width: 100%;
 		background-color:rgba(0,0,0,0.8); 
 	}
+	
+	
 	.image{
+		float: left;
 		display: inline-block;
 		width: 1.2rem;
 		height: 0.64rem;
 		background-color: red;
 	}
-	.row{
-		position: relative;
-	}
-	.nav{
+	
+	.nav-class{
+		float: left;
 		margin-left: 0.5rem;
-		width: 5.4rem;
 		height: 0.64rem;
 		line-height: 0.64rem;
+		font-size: 16px;
 	}
 	.link{
+		display: inline-block;
 		height: 0.64rem;
 		margin-right: 0.3rem;
 		font-size:0.16rem;
@@ -74,11 +81,10 @@
 		border-bottom: 0.02rem solid #428bca;
 	}
 	.search{
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translate(0,-50%);
+		position: relative;
+		margin-top: 11px;
 	}
+	
  	.form-control{
 		width: 2.5rem;
 		height: 0.2rem;
@@ -107,11 +113,8 @@
 		}
 	}
 	@media (max-width: 767px){
-		.image,.nav{
+		.image,.nav-class{
 			display: none;
-		}
-		.row{
-			padding-top: 0.6rem;
 		}
 		.search{
 			width: 100%;

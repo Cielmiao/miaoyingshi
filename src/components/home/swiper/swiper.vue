@@ -62,10 +62,11 @@
         "/static/img/1.ccdfb69.jpg", 
         "/static/img/1.ccdfb69.jpg"
         ],
+        slides:[],
         iconList:[
           {
             icon:"icon-live",
-            txt:"电视直播"
+            txt:"电影"
           },
           {
             icon:"icon-VIP",
@@ -84,6 +85,18 @@
           "爱情","动作","恐怖","科幻","剧情","犯罪","奇幻","战争"
         ]
       }
+    },
+    created(){
+      var _this = this;
+      $.ajax({
+        url:'http://miaoyingshi.com/api/getTopSlider',
+        type:'GET',
+        dataType: 'JSONP',
+        success:function (res){
+                    _this.slides = res.data
+                }  
+      })
+      console.log(_this.slides)
     }
   }
 </script>
@@ -92,7 +105,6 @@
     width: 100%;
     margin-top: 0.2rem;
     padding: 0.15rem;
-    background-color: rgba(0,0,0,0.8);
   }
   .swiper-img{
     width: 100%;
